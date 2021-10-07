@@ -6,7 +6,7 @@
         {
             "type": "shell",
             "label": "g++", //这里注意一下，见下文
-            "command": "E:\\mingw\\mingw64\\bin\\g++.exe",
+            "command": "D:\\mingw\\mingw\\mingw64\\bin\\g++.exe",
             "args": [
                 "-g",
                 "${file}",
@@ -21,7 +21,7 @@
                 "-D _USE_MATH_DEFINES"
             ],
             "options": {
-                "cwd": "E:\\mingw\\mingw64\\bin"
+                "cwd": "D:\\mingw\\mingw\\mingw64\\bin"
             },
             "problemMatcher": [
                 "$gcc"
