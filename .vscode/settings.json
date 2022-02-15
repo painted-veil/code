@@ -38,7 +38,11 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "list": "cpp",
+        "iterator": "cpp",
+        "map": "cpp",
+        "set": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

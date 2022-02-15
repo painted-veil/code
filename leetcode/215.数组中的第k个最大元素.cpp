@@ -1,0 +1,42 @@
+/*
+ * @lc app=leetcode.cn id=215 lang=cpp
+ *
+ * [215] 数组中的第K个最大元素
+ */
+
+// @lc code=start
+class Solution {
+public:
+    void MaxHeapify(vector<int>& a,int i,int heapSize){
+        int left = i * 2 + 1;
+        int right = i* 2 +2;
+        int largest = i;
+        if(left < heapSize && a[left] > a[largest]){
+            largest = left;
+        }
+        if(right < heapSize && a[right] > a[largest]){
+            largest = right;
+        }
+        if(largest != i){
+            swap(a[i],a[largest]);
+            MaxHeapify(a, largest, heapSize);
+        }
+    }
+    void buildMaxheap(vector<int>& a,int heapSize){
+        for(int i = heapSize/2;i >= 0; --i){
+            MaxHeapify(a,i, heapSize);
+        }
+    }
+    int findKthLargest(vector<int>& nums, int k) {//堆排序,大根堆
+        int heapSize = nums.size();
+        buildMaxheap(nums, heapSize);
+        for(int i = nums.size() - 1; i >= nums.size() - k + 1; --i){
+            swap(nums[0],nums[i]);
+            --heapSize;
+            MaxHeapify(nums,0,heapSize);
+        }
+        return nums[0];
+    }
+};
+// @lc code=end
+

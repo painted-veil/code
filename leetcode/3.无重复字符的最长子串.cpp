@@ -13,7 +13,7 @@ public:
         int maxStr=0;
         int left = 0;
         for(int i=0; i<s.size(); i++){
-            while(wi.find(s[i])!=wi.end()){
+            while(wi.find(s[i])!=wi.end()){//find查找对应元素，成功返回对应的迭代器，失败返回最后一个元素迭代器最后添加进去的元素对应的迭代器的下一个
             wi.erase(s[left]);
             left++;
             }

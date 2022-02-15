@@ -17,8 +17,18 @@
  */
 class Solution {
 public:
-    ListNode* deleteDuplicates(ListNode* head) {
-
+    ListNode* deleteDuplicates(ListNode* head) {//时间复杂度O(n),空间复杂度O(1);
+       ListNode *pi = head;
+       while(pi&&pi->next){
+           if(pi->val == pi->next->val){
+               ListNode *del = pi->next;
+               pi->next = pi->next->next;
+               delete del;
+           }else{
+               pi = pi->next;
+           }
+       }
+       return head;
     }
 };
 // @lc code=end
